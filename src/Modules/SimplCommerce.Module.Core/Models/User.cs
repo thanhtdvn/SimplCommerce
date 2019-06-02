@@ -52,5 +52,16 @@ namespace SimplCommerce.Module.Core.Models
 
         /// <inheritdoc />
         public string ExtensionData { get; set; }
+
+        private bool? isGuest;
+        ///
+        /// Make sure Roles list must be loaded before you call this method to check user is Guest or not
+        ///
+        public bool IsGuest(){
+            if(isGuest ==null){
+                isGuest = Roles.Count == 1 && Roles[0].RoleId == (int) EnumRoles.GuestRoleId;
+            } 
+            return isGuest.Value;
+        }
     }
 }

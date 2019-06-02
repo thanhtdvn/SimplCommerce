@@ -1,0 +1,138 @@
+2019-04-09 16:06:57.172 +07:00 [Warning] [Microsoft.EntityFrameworkCore.Query] [{ Id: 20500, Name: "Microsoft.EntityFrameworkCore.Query.QueryClientEvaluationWarning" }] The LINQ expression '"where ((([x].PublishStart != null) AndAlso ([x].PublishStart < Convert(DateTimeOffset.Now, Nullable`1))) AndAlso (Not(([x].PublishEnd != null)) OrElse ([x].PublishEnd > Convert(DateTimeOffset.Now, Nullable`1))))"' could not be translated and will be evaluated locally.
+2019-04-09 16:07:00.658 +07:00 [Warning] [Microsoft.EntityFrameworkCore.Query] [{ Id: 10106, Name: "Microsoft.EntityFrameworkCore.Query.IncludeIgnoredWarning" }] The Include operation for navigation '"[x].Product.ThumbnailImage"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information.
+2019-04-09 16:07:00.658 +07:00 [Warning] [Microsoft.EntityFrameworkCore.Query] [{ Id: 10106, Name: "Microsoft.EntityFrameworkCore.Query.IncludeIgnoredWarning" }] The Include operation for navigation '"[x].Product.OptionCombinations.Option"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information.
+2019-04-09 16:52:19.794 +07:00 [Warning] [Microsoft.EntityFrameworkCore.Query] [{ Id: 20500, Name: "Microsoft.EntityFrameworkCore.Query.QueryClientEvaluationWarning" }] The LINQ expression '"where ((([x].PublishStart != null) AndAlso ([x].PublishStart < Convert(DateTimeOffset.Now, Nullable`1))) AndAlso (Not(([x].PublishEnd != null)) OrElse ([x].PublishEnd > Convert(DateTimeOffset.Now, Nullable`1))))"' could not be translated and will be evaluated locally.
+2019-04-09 16:52:24.019 +07:00 [Warning] [Microsoft.EntityFrameworkCore.Query] [{ Id: 10106, Name: "Microsoft.EntityFrameworkCore.Query.IncludeIgnoredWarning" }] The Include operation for navigation '"[x].Product.ThumbnailImage"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information.
+2019-04-09 16:52:24.019 +07:00 [Warning] [Microsoft.EntityFrameworkCore.Query] [{ Id: 10106, Name: "Microsoft.EntityFrameworkCore.Query.IncludeIgnoredWarning" }] The Include operation for navigation '"[x].Product.OptionCombinations.Option"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information.
+2019-04-09 18:33:42.187 +07:00 [Warning] [Microsoft.EntityFrameworkCore.Query] [{ Id: 20500, Name: "Microsoft.EntityFrameworkCore.Query.QueryClientEvaluationWarning" }] The LINQ expression '"where ((([x].PublishStart != null) AndAlso ([x].PublishStart < Convert(DateTimeOffset.Now, Nullable`1))) AndAlso (Not(([x].PublishEnd != null)) OrElse ([x].PublishEnd > Convert(DateTimeOffset.Now, Nullable`1))))"' could not be translated and will be evaluated locally.
+2019-04-09 20:51:02.072 +07:00 [Warning] [Microsoft.EntityFrameworkCore.Query] [{ Id: 20500, Name: "Microsoft.EntityFrameworkCore.Query.QueryClientEvaluationWarning" }] The LINQ expression '"where ((([x].PublishStart != null) AndAlso ([x].PublishStart < Convert(DateTimeOffset.Now, Nullable`1))) AndAlso (Not(([x].PublishEnd != null)) OrElse ([x].PublishEnd > Convert(DateTimeOffset.Now, Nullable`1))))"' could not be translated and will be evaluated locally.
+2019-04-09 20:53:46.996 +07:00 [Warning] [Microsoft.EntityFrameworkCore.Query] [{ Id: 10106, Name: "Microsoft.EntityFrameworkCore.Query.IncludeIgnoredWarning" }] The Include operation for navigation '"[x].Roles.Role"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information.
+2019-04-09 20:53:46.997 +07:00 [Warning] [Microsoft.EntityFrameworkCore.Query] [{ Id: 10106, Name: "Microsoft.EntityFrameworkCore.Query.IncludeIgnoredWarning" }] The Include operation for navigation '"[x].CustomerGroups.CustomerGroup"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information.
+2019-04-09 20:57:01.169 +07:00 [Warning] [Microsoft.EntityFrameworkCore.Query] [{ Id: 20500, Name: "Microsoft.EntityFrameworkCore.Query.QueryClientEvaluationWarning" }] The LINQ expression '"GroupBy([x.Brand], [x])"' could not be translated and will be evaluated locally.
+2019-04-09 20:57:01.173 +07:00 [Warning] [Microsoft.EntityFrameworkCore.Query] [{ Id: 20500, Name: "Microsoft.EntityFrameworkCore.Query.QueryClientEvaluationWarning" }] The LINQ expression '"GroupBy([x.Brand], [x])"' could not be translated and will be evaluated locally.
+2019-04-09 20:57:01.175 +07:00 [Warning] [Microsoft.EntityFrameworkCore.Query] [{ Id: 20500, Name: "Microsoft.EntityFrameworkCore.Query.QueryClientEvaluationWarning" }] The LINQ expression '"Count()"' could not be translated and will be evaluated locally.
+2019-04-09 20:57:22.511 +07:00 [Warning] [Microsoft.EntityFrameworkCore.Query] [{ Id: 10106, Name: "Microsoft.EntityFrameworkCore.Query.IncludeIgnoredWarning" }] The Include operation for navigation '"[x].Product.ThumbnailImage"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information.
+2019-04-09 20:57:22.512 +07:00 [Warning] [Microsoft.EntityFrameworkCore.Query] [{ Id: 10106, Name: "Microsoft.EntityFrameworkCore.Query.IncludeIgnoredWarning" }] The Include operation for navigation '"[x].Product.OptionCombinations.Option"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information.
+2019-04-09 20:58:28.468 +07:00 [Error] [Microsoft.EntityFrameworkCore.Database.Command] [{ Id: 20102, Name: "Microsoft.EntityFrameworkCore.Database.Command.CommandError" }] Failed executing DbCommand ("21"ms) [Parameters=["@p1='?' (DbType = Int64), @p0='?' (DbType = Int32), @p2='?' (Size = 450), @p3='?' (Size = 450), @p4='?' (Size = 450), @p5='?' (Size = 450), @p6='?' (Size = 450), @p7='?' (DbType = Int64), @p8='?' (Size = 450), @p9='?' (DbType = Int64), @p10='?' (Size = 450), @p11='?' (Size = 450), @p12='?' (Size = 450), @p13='?' (Size = 450), @p14='?' (Size = 450), @p15='?' (Size = 450), @p16='?' (DbType = Int64), @p17='?' (Size = 450), @p18='?' (DbType = Int64), @p19='?' (Size = 450), @p20='?' (Size = 450), @p21='?' (Size = 450), @p22='?' (Size = 450), @p23='?' (Size = 450), @p24='?' (Size = 450), @p25='?' (DbType = Int64), @p26='?' (Size = 450), @p27='?' (DbType = Int64), @p28='?' (Size = 450), @p30='?' (DbType = Int64), @p29='?' (DbType = Boolean)"], CommandType='Text', CommandTimeout='30']"
+""UPDATE \"Catalog_Product\" SET \"StockQuantity\" = @p0
+WHERE \"Id\" = @p1;
+INSERT INTO \"Core_Address\" (\"AddressLine1\", \"AddressLine2\", \"City\", \"ContactName\", \"CountryId\", \"DistrictId\", \"Phone\", \"StateOrProvinceId\", \"ZipCode\")
+VALUES (@p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10)
+RETURNING \"Id\";
+INSERT INTO \"Orders_OrderAddress\" (\"AddressLine1\", \"AddressLine2\", \"City\", \"ContactName\", \"CountryId\", \"DistrictId\", \"Phone\", \"StateOrProvinceId\", \"ZipCode\")
+VALUES (@p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19)
+RETURNING \"Id\";
+INSERT INTO \"Orders_OrderAddress\" (\"AddressLine1\", \"AddressLine2\", \"City\", \"ContactName\", \"CountryId\", \"DistrictId\", \"Phone\", \"StateOrProvinceId\", \"ZipCode\")
+VALUES (@p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28)
+RETURNING \"Id\";
+UPDATE \"ShoppingCart_Cart\" SET \"IsActive\" = @p29
+WHERE \"Id\" = @p30;"
+Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "PK_Core_Address"
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlConnector.cs:line 1032
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming) in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 489
+   at Npgsql.NpgsqlDataReader.NextResult() in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 332
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken) in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1218
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1130
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+2019-04-09 20:58:28.486 +07:00 [Error] [Microsoft.EntityFrameworkCore.Update] [{ Id: 10000, Name: "Microsoft.EntityFrameworkCore.Update.SaveChangesFailed" }] An exception occurred in the database while saving changes for context type '"SimplCommerce.Module.Core.Data.SimplDbContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> Npgsql.PostgresException: 23505: duplicate key value violates unique constraint \"PK_Core_Address\"
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlConnector.cs:line 1032
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming) in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 489
+   at Npgsql.NpgsqlDataReader.NextResult() in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 332
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken) in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1218
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1130
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded) in C:\projects\npgsql-entityframeworkcore-postgresql\src\EFCore.PG\Storage\Internal\NpgsqlExecutionStrategy.cs:line 28
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IReadOnlyList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> Npgsql.PostgresException: 23505: duplicate key value violates unique constraint "PK_Core_Address"
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlConnector.cs:line 1032
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming) in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 489
+   at Npgsql.NpgsqlDataReader.NextResult() in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 332
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken) in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1218
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1130
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded) in C:\projects\npgsql-entityframeworkcore-postgresql\src\EFCore.PG\Storage\Internal\NpgsqlExecutionStrategy.cs:line 28
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IReadOnlyList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2019-04-09 20:58:29.229 +07:00 [Error] [Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware] [{ Id: 1, Name: "UnhandledException" }] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> Npgsql.PostgresException: 23505: duplicate key value violates unique constraint "PK_Core_Address"
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlConnector.cs:line 1032
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming) in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 489
+   at Npgsql.NpgsqlDataReader.NextResult() in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 332
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken) in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1218
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1130
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded) in C:\projects\npgsql-entityframeworkcore-postgresql\src\EFCore.PG\Storage\Internal\NpgsqlExecutionStrategy.cs:line 28
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IReadOnlyList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at SimplCommerce.Module.Core.Data.SimplDbContext.SaveChanges(Boolean acceptAllChangesOnSuccess) in /ThanhTruong/_workspace/_project/SimplCommerce/src/Modules/SimplCommerce.Module.Core/Data/SimplDbContext.cs:line 26
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at SimplCommerce.Module.Core.Data.RepositoryWithTypedId`2.SaveChanges() in /ThanhTruong/_workspace/_project/SimplCommerce/src/Modules/SimplCommerce.Module.Core/Data/RepositoryWithTypedId.cs:line 40
+   at SimplCommerce.Module.Orders.Services.OrderService.CreateOrder(Int64 cartId, String paymentMethod, Decimal paymentFeeAmount, String shippingMethodName, Address billingAddress, Address shippingAddress, OrderStatus orderStatus) in /ThanhTruong/_workspace/_project/SimplCommerce/src/Modules/SimplCommerce.Module.Orders/Services/OrderService.cs:line 320
+   at SimplCommerce.Module.Orders.Services.OrderService.CreateOrder(Int64 cartId, String paymentMethod, Decimal paymentFeeAmount, OrderStatus orderStatus) in /ThanhTruong/_workspace/_project/SimplCommerce/src/Modules/SimplCommerce.Module.Orders/Services/OrderService.cs:line 139
+   at SimplCommerce.Module.PaymentCoD.Areas.PaymentCoD.Controllers.CoDController.CoDCheckout() in /ThanhTruong/_workspace/_project/SimplCommerce/src/Modules/SimplCommerce.Module.PaymentCoD/Areas/PaymentCoD/Controllers/CoDController.cs:line 58
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)

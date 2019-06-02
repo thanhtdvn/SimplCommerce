@@ -13,7 +13,6 @@ namespace SimplCommerce.Module.Core.Extensions
     public class WorkContext : IWorkContext
     {
         private const string UserGuidCookiesName = "SimplUserGuid";
-        private const long GuestRoleId = 3;
 
         private User _currentUser;
         private UserManager<User> _userManager;
@@ -48,7 +47,7 @@ namespace SimplCommerce.Module.Core.Extensions
                 _currentUser = _userRepository.Query().Include(x => x.Roles).FirstOrDefault(x => x.UserGuid == userGuid);
             }
 
-            if (_currentUser != null && _currentUser.Roles.Count == 1 && _currentUser.Roles.First().RoleId == GuestRoleId)
+            if (_currentUser != null && _currentUser.IsGuest())
             {
                 return _currentUser;
             }

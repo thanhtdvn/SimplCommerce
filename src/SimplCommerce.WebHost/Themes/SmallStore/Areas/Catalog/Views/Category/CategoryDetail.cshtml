@@ -1,0 +1,539 @@
+﻿@using System.Threading.Tasks
+@addTagHelper *, SimplCommerce.Infrastructure
+
+@model SimplCommerce.Module.Catalog.Areas.Catalog.ViewModels.ProductsByCategory
+@{
+    ViewBag.Title = Model.CategoryMetaTitle ?? Model.CategoryName;
+}
+
+@section additionalMeta {
+    <meta name="title" content="@ViewBag.Title" />
+    <meta name="keywords" content="@Model.CategoryMetaKeywords" />
+    <meta name="description" content="@Model.CategoryMetaDescription" />
+}
+
+@section head {
+    <link simpl-append-version="true" rel="stylesheet" href="~/lib/nouislider/distribute/nouislider.min.css" />
+}
+<!-- 
+<div class="bread-crumb flex-w p-r-15 p-t-20 p-b-20 p-lr-0-lg">
+    <a href="~/" class="stext-109 cl8 hov-cl1 trans-04">
+        @Localizer["Home"]
+        <i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+    </a>
+    @if (Model.ParentCategorId.HasValue)
+    {
+        @await Component.InvokeAsync("CategoryBreadcrumb", new { categoryId = Model.ParentCategorId.Value })
+    }
+
+    <span class="stext-109 cl4">
+        @Model.CategoryName
+    </span>
+</div>
+
+
+<div class="row">
+    <div class="col-md-3 product-list-filters">
+        <h3 class="p-t-25 p-b-25">@Localizer["Filter by"]</h3>
+        <form id="productFilter" name="productFilter" method="GET" action="~/@Model.CategorySlug">
+            <div id="accordion-brand">
+                <div class="card">
+                    <div class="card-header" id="cardBrandHeader">
+                        <h5 class="mb-0">
+                            <a data-toggle="collapse" href="#collapse-brand" aria-expanded="true" aria-controls="collapse-brand">
+                                @Localizer["Brand"]
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                        </h5>
+                    </div>
+                    <div id="collapse-brand" class="collapse show" aria-labelledby="cardBrandHeader" data-parent="#accordion-brand">
+                        <div class="card-body">
+                            <ul class="list-unstyled checkbox-list">
+                                @foreach (var brand in Model.FilterOption.Brands)
+                                {
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox" value="@brand.Slug" name="brand" checked="@Model.CurrentSearchOption.GetBrands().Contains(brand.Slug)">
+                                            @brand.Name
+                                            <small>(@brand.Count)</small>
+                                        </label>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @if (Model.FilterOption.Price.MaxPrice != Model.FilterOption.Price.MinPrice)
+            {
+                <div id="accordion-price" class="mt-4">
+                    <div class="card">
+                        <div class="card-header" id="cardHeaderPrice">
+                            <h5 class="mb-0">
+                                <a data-toggle="collapse" href="#collapse-price" aria-expanded="true" aria-controls="collapse-price">
+                                    @Localizer["Price"]
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="collapse-price" class="collapse show" aria-labelledby="cardHeaderPrice" data-parent="#accordion-price">
+                            <div class="card-body">
+                                <div id="priceSlider"></div>
+                                <div>
+                                    <input type="hidden" id="originMinPrice" value="@Model.FilterOption.Price.MinPrice.ToString("F0")" />
+                                    <input type="hidden" id="originMaxPrice" value="@Model.FilterOption.Price.MaxPrice.ToString("F0")" />
+                                    <span id="minPrice"></span>
+                                    <span id="maxPrice"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </form>
+    </div>
+    <div class="col-md-9">
+        <div class="row mb-3">
+            <div class="col-sm-6 category-result">
+                <h2>@Model.CategoryName</h2>
+                <small class="badge-results">@Model.TotalProduct @Localizer["results"]</small>
+            </div>
+            <div class="col-sm-6">
+                <ul class="list-inline clear-both product-list-display-options">
+                    <li class="sort-by">
+                        <label>@Localizer["Sort by:"]</label>
+                        <div class="btn-group">
+                            <select asp-for="CurrentSearchOption.Sort" asp-items="Model.AvailableSortOptions" class="form-control"></select>
+                        </div>
+                    </li>
+                    @*<li class="pagination-option">
+                            <label>Show :</label>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    20 <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">All</a></li>
+                                    <li><a href="#">50</a></li>
+                                    <li><a href="#">30</a></li>
+                                </ul>
+                            </div>
+                        </li>*@
+                </ul>
+            </div>
+        </div>
+        <div class="row product-list">
+            @foreach (var product in Model.Products)
+            {
+                <div class="col-xs-6 col-md-4">
+                    <partial name="_ProductThumbnail" model="product" />
+                </div>
+            }
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-right">
+                <cs-pager cs-paging-pagesize="@Model.CurrentSearchOption.PageSize"
+                          cs-paging-pagenumber="@Model.CurrentSearchOption.Page"
+                          cs-paging-totalitems="@Model.TotalProduct"
+                          cs-pagenumber-param="page"
+                          asp-basehref="~/@Model.CategorySlug"
+                          asp-all-route-data="@Model.CurrentSearchOption.ToDictionary()"></cs-pager>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+        <div class="shop_sidebar_area">
+            
+            <!-- ##### Single Widget ##### -->
+            <div id="accordion-categories" class="widget catagory mb-50">
+                <div id="cardHeaderCategories">
+                    <a data-toggle="collapse" href="#collapse-categories" aria-expanded="true" aria-controls="collapse-categories" class="widget-title">
+                            @Localizer["Categories"]
+                            <i class="fa fa-angle-down"></i>
+                    </a>
+                </div>
+                <div id="collapse-categories" class="collapse show" aria-labelledby="cardHeaderCategories" data-parent="#accordion-categories">
+                    <div class="catagories-menu">
+                            <ul>
+                                <li class="active"><a href="#">Chairs</a></li>
+                                <li><a href="#">Beds</a></li>
+                                <li><a href="#">Accesories</a></li>
+                                <li><a href="#">Furniture</a></li>
+                                <li><a href="#">Home Deco</a></li>
+                                <li><a href="#">Dressings</a></li>
+                                <li><a href="#">Tables</a></li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+            <form id="productFilter" name="productFilter" method="GET" action="~/@Model.CategorySlug">
+            <div id="accordion-brand" class="widget brands mb-50">
+                    <div id="cardBrandHeader" class="mb-20">
+                            <a data-toggle="collapse" href="#collapse-brand" aria-expanded="true" aria-controls="collapse-brand" class="widget-title" >
+                                @Localizer["Brand"]
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                    </div>
+                    
+                    <div id="collapse-brand" class="collapse show" aria-labelledby="cardBrandHeader" data-parent="#accordion-brand">
+                        <ul class="list-unstyled checkbox-list" style="padding: 0; margin-top: 10px;">
+                                @foreach (var brand in Model.FilterOption.Brands)
+                                {
+                                    <li class="form-check">
+                                        <label class="checkbox">
+                                            <input type="checkbox" value="@brand.Slug" name="brand" checked="@Model.CurrentSearchOption.GetBrands().Contains(brand.Slug)">
+                                            @brand.Name
+                                            <small>(@brand.Count)</small>
+                                        </label>
+                                    </li>
+                                }
+                            </ul>
+                </div>
+            </div>
+            @if (Model.FilterOption.Price.MaxPrice != Model.FilterOption.Price.MinPrice)
+            {
+                <div id="accordion-price" class="widget price mb-50">
+                    <div id="cardHeaderPrice" class="mb-20">
+                            <a data-toggle="collapse" href="#collapse-price" aria-expanded="true" aria-controls="collapse-price" class="widget-title" >
+                                    @Localizer["Price"]
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
+                        </div>
+                        <div id="collapse-price" class="collapse show" aria-labelledby="cardHeaderPrice" data-parent="#accordion-price">
+                            <div id="priceSlider"></div>
+                                <div>
+                                    <input type="hidden" id="originMinPrice" value="@Model.FilterOption.Price.MinPrice.ToString("F0")" />
+                                    <input type="hidden" id="originMaxPrice" value="@Model.FilterOption.Price.MaxPrice.ToString("F0")" />
+                                    <div class="range-price">
+                                        <span>$</span>
+                                        <span id="minPrice"></span>
+                                        <span> - </span>
+                                        <span>$</span>
+                                        <span id="maxPrice"></span>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+            }
+        </form>
+        </div>
+
+        <div class="amado_product_area section-padding-100">
+            <div class="container-fluid">
+                <div class="bread-crumb flex-w p-r-15 p-t-20 p-b-20 p-lr-0-lg">
+    <a href="~/" class="stext-109 cl8 hov-cl1 trans-04">
+        @Localizer["Home"]
+        <i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+    </a>
+    @if (Model.ParentCategorId.HasValue)
+    {
+        @await Component.InvokeAsync("CategoryBreadcrumb", new { categoryId = Model.ParentCategorId.Value })
+    }
+
+    <span class="stext-109 cl4">
+        @Model.CategoryName
+    </span>
+</div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="product-topbar d-xl-flex align-items-end justify-content-between">
+                            <!-- Total Products -->
+                            <div class="total-products">
+                                <p>Showing 1-8 0f 25</p>
+                                <div class="view d-flex">
+                                    <a href="#"><i class="fa fa-th-large" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                            <!-- Sorting -->
+                            <div class="product-sorting d-flex">
+                                <div class="sort-by-date d-flex align-items-center mr-15">
+                                    <p>Sort by</p>
+                                    <form action="#" method="get">
+                                        <select name="select" id="sortBydate">
+                                            <option value="value">Date</option>
+                                            <option value="value">Newest</option>
+                                            <option value="value">Popular</option>
+                                        </select>
+                                    </form>
+                                </div>
+                                <div class="view-product d-flex align-items-center">
+                                    <p>View</p>
+                                    <form action="#" method="get">
+                                        <select name="select" id="viewProduct">
+                                            <option value="value">12</option>
+                                            <option value="value">24</option>
+                                            <option value="value">48</option>
+                                            <option value="value">96</option>
+                                        </select>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    @foreach (var product in Model.Products)
+            {
+                <div class="col-xs-6 col-md-4">
+                    <partial name="_ProductThumbnail" model="product" />
+                </div>
+            }
+                    <!-- Single Product Area -->
+                    <div class="col-12 col-sm-6 col-md-12 col-xl-6">
+                        <div class="single-product-wrapper">
+                            <!-- Product Image -->
+                            <div class="product-img">
+                                <img src="img/product-img/product1.jpg" alt="">
+                                <!-- Hover Thumb -->
+                                <img class="hover-img" src="img/product-img/product2.jpg" alt="">
+                            </div>
+
+                            <!-- Product Description -->
+                            <div class="product-description d-flex align-items-center justify-content-between">
+                                <!-- Product Meta Data -->
+                                <div class="product-meta-data">
+                                    <div class="line"></div>
+                                    <p class="product-price">$180</p>
+                                    <a href="product-details.html">
+                                        <h6>Modern Chair</h6>
+                                    </a>
+                                </div>
+                                <!-- Ratings & Cart -->
+                                <div class="ratings-cart text-right">
+                                    <div class="ratings">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="cart">
+                                        <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="img/core-img/cart.png" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Product Area -->
+                    <div class="col-12 col-sm-6 col-md-12 col-xl-6">
+                        <div class="single-product-wrapper">
+                            <!-- Product Image -->
+                            <div class="product-img">
+                                <img src="img/product-img/product2.jpg" alt="">
+                                <!-- Hover Thumb -->
+                                <img class="hover-img" src="img/product-img/product3.jpg" alt="">
+                            </div>
+
+                            <!-- Product Description -->
+                            <div class="product-description d-flex align-items-center justify-content-between">
+                                <!-- Product Meta Data -->
+                                <div class="product-meta-data">
+                                    <div class="line"></div>
+                                    <p class="product-price">$180</p>
+                                    <a href="product-details.html">
+                                        <h6>Modern Chair</h6>
+                                    </a>
+                                </div>
+                                <!-- Ratings & Cart -->
+                                <div class="ratings-cart text-right">
+                                    <div class="ratings">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="cart">
+                                        <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="img/core-img/cart.png" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Product Area -->
+                    <div class="col-12 col-sm-6 col-md-12 col-xl-6">
+                        <div class="single-product-wrapper">
+                            <!-- Product Image -->
+                            <div class="product-img">
+                                <img src="img/product-img/product3.jpg" alt="">
+                                <!-- Hover Thumb -->
+                                <img class="hover-img" src="img/product-img/product4.jpg" alt="">
+                            </div>
+
+                            <!-- Product Description -->
+                            <div class="product-description d-flex align-items-center justify-content-between">
+                                <!-- Product Meta Data -->
+                                <div class="product-meta-data">
+                                    <div class="line"></div>
+                                    <p class="product-price">$180</p>
+                                    <a href="product-details.html">
+                                        <h6>Modern Chair</h6>
+                                    </a>
+                                </div>
+                                <!-- Ratings & Cart -->
+                                <div class="ratings-cart text-right">
+                                    <div class="ratings">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="cart">
+                                        <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="img/core-img/cart.png" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Product Area -->
+                    <div class="col-12 col-sm-6 col-md-12 col-xl-6">
+                        <div class="single-product-wrapper">
+                            <!-- Product Image -->
+                            <div class="product-img">
+                                <img src="img/product-img/product4.jpg" alt="">
+                                <!-- Hover Thumb -->
+                                <img class="hover-img" src="img/product-img/product5.jpg" alt="">
+                            </div>
+
+                            <!-- Product Description -->
+                            <div class="product-description d-flex align-items-center justify-content-between">
+                                <!-- Product Meta Data -->
+                                <div class="product-meta-data">
+                                    <div class="line"></div>
+                                    <p class="product-price">$180</p>
+                                    <a href="product-details.html">
+                                        <h6>Modern Chair</h6>
+                                    </a>
+                                </div>
+                                <!-- Ratings & Cart -->
+                                <div class="ratings-cart text-right">
+                                    <div class="ratings">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="cart">
+                                        <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="img/core-img/cart.png" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Product Area -->
+                    <div class="col-12 col-sm-6 col-md-12 col-xl-6">
+                        <div class="single-product-wrapper">
+                            <!-- Product Image -->
+                            <div class="product-img">
+                                <img src="img/product-img/product5.jpg" alt="">
+                                <!-- Hover Thumb -->
+                                <img class="hover-img" src="img/product-img/product6.jpg" alt="">
+                            </div>
+
+                            <!-- Product Description -->
+                            <div class="product-description d-flex align-items-center justify-content-between">
+                                <!-- Product Meta Data -->
+                                <div class="product-meta-data">
+                                    <div class="line"></div>
+                                    <p class="product-price">$180</p>
+                                    <a href="product-details.html">
+                                        <h6>Modern Chair</h6>
+                                    </a>
+                                </div>
+                                <!-- Ratings & Cart -->
+                                <div class="ratings-cart text-right">
+                                    <div class="ratings">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="cart">
+                                        <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="img/core-img/cart.png" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Product Area -->
+                    <div class="col-12 col-sm-6 col-md-12 col-xl-6">
+                        <div class="single-product-wrapper">
+                            <!-- Product Image -->
+                            <div class="product-img">
+                                <img src="img/product-img/product6.jpg" alt="">
+                                <!-- Hover Thumb -->
+                                <img class="hover-img" src="img/product-img/product1.jpg" alt="">
+                            </div>
+
+                            <!-- Product Description -->
+                            <div class="product-description d-flex align-items-center justify-content-between">
+                                <!-- Product Meta Data -->
+                                <div class="product-meta-data">
+                                    <div class="line"></div>
+                                    <p class="product-price">$180</p>
+                                    <a href="product-details.html">
+                                        <h6>Modern Chair</h6>
+                                    </a>
+                                </div>
+                                <!-- Ratings & Cart -->
+                                <div class="ratings-cart text-right">
+                                    <div class="ratings">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="cart">
+                                        <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="img/core-img/cart.png" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Pagination -->
+                        <nav aria-label="navigation">
+                            <ul class="pagination justify-content-end mt-50">
+                                <li class="page-item active"><a class="page-link" href="#">01.</a></li>
+                                <li class="page-item"><a class="page-link" href="#">02.</a></li>
+                                <li class="page-item"><a class="page-link" href="#">03.</a></li>
+                                <li class="page-item"><a class="page-link" href="#">04.</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+@section scripts {
+    <script simpl-append-version="true" src="~/lib/wnumb/wNumb.js"></script>
+    <script simpl-append-version="true" src="~/lib/nouislider/distribute/nouislider.min.js"></script>
+
+    <script>
+        var productFilter = {};
+        productFilter.currentSearchOption = @Html.Raw(Model.CurrentSearchOption.ToJson());
+        productFilter.priceSetting = {
+            min: @Model.FilterOption.Price.MinPrice.ToString("F0"),
+            max: @Model.FilterOption.Price.MaxPrice.ToString("F0"),
+            currentMin: @((Model.CurrentSearchOption.MinPrice ?? Model.FilterOption.Price.MinPrice).ToString("F0")),
+            currentMax: @((Model.CurrentSearchOption.MaxPrice ?? Model.FilterOption.Price.MaxPrice).ToString("F0"))
+        };
+    </script>
+    <script simpl-append-version="true" src="~/modules/catalog/product-filter.js"></script>
+}
